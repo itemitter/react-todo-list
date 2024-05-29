@@ -1,3 +1,4 @@
+import '../style/TodoInput.less'
 import { useState } from 'react'
 function TodoInput(props) {
   const { addTodo } = props
@@ -13,12 +14,14 @@ function TodoInput(props) {
     setVal(e.target.value)
   }
   return (
-    <div>
+    <div className='input-wrapper'>
+      <p className='input-text'> 待办事项 </p>
       <input
+        className='input-self'
         value={val}
         onChange={handleChange}
       />
-      <p onClick={addTodoHandler}>新增</p>
+      <button className='input-add' onClick={addTodoHandler}> 新增 </button>
     </div>
   )
 }
